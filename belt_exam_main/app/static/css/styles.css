@@ -1,0 +1,30 @@
+
+/*belt exam*/
+* {
+  font-family: monaco;
+}
+
+.mainpage{
+
+	border: solid 2px black;
+	display: inline-block;
+	width: 300px;
+	height: 500px;
+	vertical-align: top;
+	padding-right: 30px;
+	
+}
+.index{
+
+	display: inline-block;
+	vertical-align: top;
+	border: 1px solid black;
+	width: 300px;
+	
+}
+
+.button{
+	background-color: lightblue;
+	width: 120px;
+	height: 20px;
+}

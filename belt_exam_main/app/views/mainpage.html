@@ -1,0 +1,58 @@
+<!-- belt exam -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>success</title>
+	<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+</head>
+<body>
+{% with messages = get_flashed_messages() %}
+ {% if messages %}
+  {% for message in messages %}
+    <p>{{message}}</p>
+  {% endfor %}
+ {% endif %}
+{% endwith %}
+
+<table width="100%"><tr><td width="80%">Welcome &nbsp;{{ session['name'] }}!</td><td><a href="/logout">log out</a></td></tr></table>
+
+<div class="index">
+<h1>Quotable Quotes</h1>
+{% for quo_inf in quote_info %}
+
+		<p>  {{ quo_inf['quoted_by'] }}:{{ quo_inf['quotes'] }}</p>
+		<p>Posted by: <a href="/user/{{ quo_inf['id'] }}">{{ quo_inf['name'] }}</a></p>
+		<a href="/fav/{{ quo_inf['quote_id'] }}"><input class="button" type="submit" name="add_quote" value="Add to my lists"></a>
+{% endfor %}
+</div>
+	<div class="index">
+	<p>Your Favorites</p>
+
+	{% for favorites in fav_info %}
+
+		<p>{{ favorites['quoted_by'] }}:{{ favorites['quotes'] }}</p>
+		<p>Posted by:<a href="/user/{{ favorites['id'] }}">{{ favorites['name'] }}</p></a>
+		<a href="/delete/{{ favorites['quote_id'] }}"><input class ="button" type="submit" name="remove" value="Remove from list"></a>
+
+	{% endfor %}
+
+	</div>
+
+		<div>
+		<form action="/quote" method="POST" >
+		Contribute a Quote:
+		<p>Quoted by: <input type="text" name="quote"></p>
+		<p>Message : <textarea  name="message" rows="8" cols="30" ></textarea></p>
+		<p><input  class="button" type="submit" name="submit"></p>
+		</form>
+		</div>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+/*belt exam*/
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.index{
+display: inline-block;
+vertical-align: top;
+padding-top: 50px;
+
+}
+.button{
+	background-color: lightblue;
+	width: 50px;
+	height: 30px;
+}

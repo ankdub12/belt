@@ -1,0 +1,42 @@
+<!-- belt exam -->
+
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/index.css" type="text/css">
+	</head>
+<body>
+{% with messages = get_flashed_messages() %}
+ {% if messages %}
+  {% for message in messages %}
+    <p>{{message}}</p>
+  {% endfor %}
+ {% endif %}
+{% endwith %}
+
+WELCOME
+ 	
+ 	
+ 	<table>
+	<div class="index">
+	<form action="/registration" method="post" >
+ 		<tr><td><h1>Registration</h1></td></tr>
+		<tr><td>Name:</td><td><input type="text" name="name"></td></tr>
+		<tr><td>Alias:</td><td> <input type="text" name="alias"></td></tr>
+		<tr><td>Email:</td><td> <input type="email" name="email"></td></tr>
+		<tr><td>Password:</td><td> <input type="password" name="password"></td></tr>
+		<tr><td>Confirm Password:</td><td> <input type="password" name="confirm_password"></td></tr>
+		<tr><td>Date of Birth:</td><td><input id="mydate" type="date" name="date"></td></tr>
+		<tr><td><input class="button" type="submit" name="submit" value="Register"></td></tr>
+	</form></div></table>
+	<table>
+	<div class="index"> 
+	<form action="/login" method= "post">
+		<tr><td><h1>Login</h1></td></tr>
+		<tr><td>Email:</td><td><input type="email" name="email"></td></tr>
+		<tr><td>Password:</td><td><input type="password" name="password"></td></tr>
+		<tr><td><input class="button" type="submit" name="submit" value="login"></td></tr>
+	</form>
+	</div>
+	</table>
+</body>
+</html>
